@@ -14,6 +14,14 @@
  *= require_self
  */
 
+table{
+  width: 100%;
+}
+
+ thead{
+  text-align: left;
+ }
+
 nav{
   text-align: right;
 
@@ -24,6 +32,11 @@ nav{
     a{
       display: inline-block;
       margin: 10px 10px 10px 0;
+    }
+
+    .menu-link{
+      float: left !important;
+      margin-left: 5px;
     }
   }
 }
@@ -38,6 +51,7 @@ a:hover{
 
 a, a:visited, a:hover{
   color: black;
+  background-color: inherit;
 }
 
 .btn{
@@ -49,22 +63,29 @@ a, a:visited, a:hover{
     background-color: white;
     color: black;
   }
+
+  &.grey{
+    background-color: #cacad0;
+  }
 }
 
-.form-center{
+.form-center, .form-object{
   margin: 0 auto;
   width: 500px;
 }
 
 form{
   input:not([type=checkbox]){
-    width: 100%;
+    width: 97%;
     border-radius: 4px;
     border: 1px solid #ccc;
     padding: 5px;
   }
   .field{
     margin-bottom: 10px;
+  }
+  input[type=submit]{
+    cursor: pointer;
   }
 }
 
