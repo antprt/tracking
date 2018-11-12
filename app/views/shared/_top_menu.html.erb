@@ -1,0 +1,7 @@
+<nav class="topmenu">
+  <% if current_user.present? %>
+    <%= link_to t("default.logout"), destroy_user_session_url, method: :delete, class: "btn white" %>
+  <% else %>
+    <%= link_to t("default.login"), new_user_session_path, class: "btn white" %>
+  <% end %>
+</nav>
