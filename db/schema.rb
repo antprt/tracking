@@ -10,11 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181112201834) do
+ActiveRecord::Schema.define(version: 20181112212916) do
 
   create_table "jwt_blacklist", force: :cascade do |t|
     t.string "jti", null: false
     t.index ["jti"], name: "index_jwt_blacklist_on_jti"
+  end
+
+  create_table "pixels", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "conversions", default: 0
+    t.integer  "provider_id"
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+    t.index ["provider_id"], name: "index_pixels_on_provider_id"
   end
 
   create_table "providers", force: :cascade do |t|

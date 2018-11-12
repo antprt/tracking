@@ -10,13 +10,6 @@
 
   <body>
     <%= render "shared/top_menu" %>
-
-    <% if flash["alert"].present? %>
-      <div class="flash-alert"><%= flash["alert"] %></div>
-    <% elsif flash["notice"].present? %>
-      <div class="flash-notice"><%= flash["notice"] %></div>
-    <% end %>
-
     <%= yield %>
   </body>
 </html>

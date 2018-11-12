@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'pixels/create'
+
+  get 'pixels/update'
+
   resources :providers
   root :to => 'welcome#index'
   devise_for :users,
@@ -10,5 +14,7 @@ Rails.application.routes.draw do
              controllers: {
                sessions: 'sessions',
              }
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
+  post '/pixel/', to: 'pixels#create', as: 'pixel_create'
+  post '/pixel/:name', to: 'pixels#update', as: 'pixel_update'
 end
