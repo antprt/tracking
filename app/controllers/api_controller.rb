@@ -1,3 +1,4 @@
+#This class is the parent for the actions for API Rest
 class ApiController < ActionController::API
   rescue_from ActiveRecord::RecordNotFound, :with => :record_not_found
 

@@ -2,6 +2,8 @@ class PixelsController < ApiController
   before_action :authenticate_user_api!
   before_action :set_pixel, only: [:update]
 
+  #post '/pixel/'
+  #Create new pixel
   def create
     @pixel = Pixel.new
     @pixel.assign_attributes(pixel_params)
@@ -9,6 +11,8 @@ class PixelsController < ApiController
     render_resource(@pixel)
   end
 
+  #post '/pixel/name'
+  #Increments one the conversion value
   def update
     @pixel.conversions += 1
     @pixel.save
