@@ -4,6 +4,16 @@
   <strong>Name:</strong>
   <%= @provider.name %>
 </p>
+<% if @provider.pixel.present? %>
+  <hr>
+  <h4>Pixels assigned to this provider:</h4>
+  <% @provider.pixel.each do |pixel| %>
+    <p>
+      <li>Name píxel: <%= pixel.name %> / Conversions: <%= pixel.conversions %></li>
+    </p>
+  <% end %>
+<% end %>
+
 
 <%= link_to 'Edit', edit_provider_path(@provider), class: "btn grey" %> |
 <%= link_to 'Back', providers_path, class: "btn grey" %>
